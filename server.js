@@ -7,12 +7,12 @@ app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-var pool = new Pool(config)
+var pool = new Pool(config);
     
 });
 app.get('/test-db',function(req,res){
-    res.sendFile(path.join(_dirname,'ui','index.html'));
-pool.query('SELECT * FROM test' function(err,result){
+    res.sendFile(path.join(_dirname,'ui','index.html'))});
+pool.query('SELECT * FROM test', function(err,result){
     if(err){
         res.status(500).send(err.toString());
          }
@@ -20,8 +20,8 @@ pool.query('SELECT * FROM test' function(err,result){
              res.send(JSON.stringify(result));
          }
     
-})
-});
+}
+);
 
 //make a select request
 //return a response with results
